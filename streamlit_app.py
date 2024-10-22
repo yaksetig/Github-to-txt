@@ -52,13 +52,12 @@ def clone_and_analyze_repo(github_url):
     return results
 
 # Set up the Streamlit page
-st.set_page_config(page_title="GitHub Code Analyzer", page_icon="🔍")
-st.title("🔍 GitHub Code Analyzer")
+st.set_page_config(page_title="GitHub to txt", page_icon="🔍")
+st.title("🔍 GitHub to txt")
 
 st.write("""
 Enter a GitHub repository URL to analyze its code files. The analyzer will collect
-all code files with common programming language extensions and display their contents.
-""")
+all code and export a txt file. Perfect for LLMs (i.e., Claude, ChatGPT).""")
 
 # Create the GitHub URL input
 github_url = st.text_input(
@@ -100,7 +99,3 @@ if st.button("Analyze Repository", disabled=not github_url):
 
 # Add footer with information
 st.markdown("---")
-st.markdown("""
-Made with ❤️ using Streamlit. This tool analyzes repositories and displays their code contents.
-Please make sure to only analyze repositories you have permission to access.
-""")
